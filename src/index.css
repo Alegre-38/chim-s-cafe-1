@@ -1,2 +1,64 @@
-body { padding-top: 70px; }
-.container { max-width: 1100px; }
+/* Custom styles to complement Bootstrap */
+body { 
+  padding-top: 76px; /* Account for fixed navbar */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Hero section positioning */
+.hero-section {
+  margin-top: -76px; /* Offset the body padding */
+  padding-top: 76px; /* Add padding to account for fixed navbar */
+  position: relative; /* Ensure the overlay is contained within the hero section */
+  overflow: hidden; /* Prevent overlay from extending beyond hero section */
+}
+
+/* Hero section overlay */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+.hero-section > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom button hover effects */
+.btn {
+  transition: all 0.3s ease;
+}
+
+/* Card hover effects */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+}
+
+/* Custom text colors */
+.text-primary {
+  color: #0d6efd !important;
+}
+
+.text-warning {
+  color: #ffc107 !important;
+}
+
+.text-success {
+  color: #198754 !important;
+}
